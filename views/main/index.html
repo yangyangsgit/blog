@@ -48,6 +48,35 @@
 				    </div>
 				  </div>
 				</form>
+				{%if userInfo.id %}
+					{%if userInfo.isAdmin %}
+						<h1>管理员:{{userInfo.username}}</h1>
+						<a href="/admin">点击此处进行管理</a>
+					{%else%}
+					{%endif%}
+					<h1>您好，{{userInfo.username}}</h1>
+					<a id="lagout" href="#">退出</a>
+				{%else%}
+					<form class="form-horizontal" role="form" id="login-form">
+					 <div class="form-group">
+					    <label for="name" class="col-sm-4 control-label">用户名</label>
+					    <div class="col-sm-8">
+					      <input type="text" class="form-control" id="name" placeholder="用户名" name="username">
+					    </div>
+					  </div>
+					  <div class="form-group">
+					    <label for="inputPassword3" class="col-sm-4 control-label">密码</label>
+					    <div class="col-sm-8">
+					      <input type="password" class="form-control" id="inputPassword3" placeholder="Password" name="password"> 
+					    </div>
+					  </div>
+					  <div class="form-group">
+					    <div class="col-sm-offset-2 col-sm-8">
+					      <a  class="btn btn-default" id="login">Sign on</a>
+					    </div>
+					  </div>
+					</form>
+				{%endif%}
 
 			</sider>
 		</div>

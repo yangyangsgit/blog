@@ -2,7 +2,10 @@ var express = require('express');
 var router = express.Router();
 
 router.get('/',function(req,res,next){
-	res.render('main/index.html');
+	console.log(req.userInfo);
+	res.render('main/index.html',{
+		userInfo:req.userInfo
+	});
 })
 router.get('/detail',function(req,res,next){
 	res.render('main/detail.html');
